@@ -10,12 +10,10 @@ public class Utils {
         char[] tokens = expression.toCharArray();
 
         // Stack for numbers: 'values'
-        Stack<Integer> values = new
-                Stack<Integer>();
+        Stack<Integer> values = new  Stack();
 
         // Stack for Operators: 'ops'
-        Stack<Character> ops = new
-                Stack<Character>();
+        Stack<Character> ops = new Stack();
 
         for (int i = 0; i < tokens.length; i++) {
 
@@ -28,8 +26,8 @@ public class Utils {
             // push it to stack for numbers
             if (tokens[i] >= '0' &&
                     tokens[i] <= '9') {
-                StringBuffer sbuf = new
-                        StringBuffer();
+                StringBuilder sbuf = new
+                        StringBuilder();
 
                 // There may be more than one
                 // digits in number
@@ -107,11 +105,8 @@ public class Utils {
     public static boolean hasPrecedence(char op1, char op2) {
         if (op2 == '(' || op2 == ')')
             return false;
-        if ((op1 == 'x' || op1 == '/') &&
-                (op2 == '+' || op2 == '-'))
-            return false;
-        else
-            return true;
+        return (op1 != 'x' && op1 != '/') ||
+                (op2 != '+' && op2 != '-');
     }
 
     public static int applyOp(char op,

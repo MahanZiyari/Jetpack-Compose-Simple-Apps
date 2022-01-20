@@ -96,7 +96,7 @@ fun MainContent() {
                         .fillMaxWidth()
                         .weight(24f),
                     onClick = {
-                        displayText = if (it == Operator.backSpace.name){
+                        displayText = if (it == Operator.BackSpace.name) {
                             displayText.dropLast(1)
                         } else
                             displayText.plus(it)

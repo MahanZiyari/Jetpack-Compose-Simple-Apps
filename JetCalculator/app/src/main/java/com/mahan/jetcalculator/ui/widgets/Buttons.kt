@@ -72,7 +72,7 @@ fun OperatorButton(
                 R.drawable.ic_baseline_remove_24 -> onClick("-")
                 R.drawable.ic_baseline_close_24 -> onClick("x")
                 R.drawable.ic_divide_svgrepo_com -> onClick("/")
-                else -> onClick(Operator.backSpace.name)
+                else -> onClick(Operator.BackSpace.name)
             }
         },
         modifier = modifier
